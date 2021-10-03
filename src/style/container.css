@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    flex-flow: row wrap;
+    padding: 1rem;
+}
+
+.swimlane{
+    border: 1px solid gray;
+    min-width: 10rem;
+    height: 30rem;
+}
+.card{
+    background-color: lightblue;
+    border: 1px solid #666;
+    margin: 5px 12px 5px 12px;
+    min-height: 100px;
+}
+
+.main-container{
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+}
