@@ -7,7 +7,7 @@
 .swimlane{
     border: 1px solid gray;
     min-width: 10rem;
-    height: 30rem;
+    height: auto;
 }
 .card{
     background-color: lightblue;

@@ -2,9 +2,9 @@ import { FC, memo } from "react"
 import { useDrag } from "react-dnd";
 
 export const Card: FC<any> = (props) => {
-    const [collected, drag, dragPreview] = useDrag(() => ({
+    const [, drag ] = useDrag(() => ({
         type:"CARD",
-        item: { id:"test" }
+        item: { id:props.ticket_id, swimlane_id: props.swimlane_id, tname:props.title }
       }))
     return (
         <div ref={drag} className="card">

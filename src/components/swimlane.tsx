@@ -6,7 +6,11 @@ import { nanoid } from 'nanoid'
 const Swimlane: FC<any> = (props) => {
 
     const [collectedProps, drop] = useDrop({
-        accept:"CARD"
+        accept:"CARD",
+        drop:(item: any, moniter) => {
+            console.log("item",item)
+            props.drop_handler(item.swimlane_id, props.swimlane_id, item.id, item.tname)
+        }
     })
 
     console.log("collectedProps",collectedProps)
@@ -18,7 +22,7 @@ const Swimlane: FC<any> = (props) => {
             {
                 props.tickets.map((ticket:any,index:any)=>{
                     return (
-                        <Card key={nanoid()} title={ticket.tname} />
+                        <Card key={nanoid()} swimlane_id={props.swimlane_id} ticket_id={ticket.id} title={ticket.tname} />
                     )
                 })
             }
